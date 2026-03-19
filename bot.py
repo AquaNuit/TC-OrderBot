@@ -400,8 +400,13 @@ async def my_tickets(interaction: discord.Interaction):
 #  Entry Point
 # ─────────────────────────────────────────────
 
+async def main():
+    from keep_alive import start_server
+    await start_server()
+    await bot.start(config.DISCORD_TOKEN)
+
 if __name__ == '__main__':
     if not config.DISCORD_TOKEN:
         print('❌ DISCORD_TOKEN not found in environment variables')
     else:
-        bot.run(config.DISCORD_TOKEN)
+        asyncio.run(main())
