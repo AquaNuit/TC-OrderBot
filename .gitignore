@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+.env
+tickets.json
+package-lock.json
